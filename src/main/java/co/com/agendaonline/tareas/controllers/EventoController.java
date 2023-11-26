@@ -98,7 +98,7 @@ public class EventoController {
 		
 		return "evento/form";
 	}
-	
+	/*
 	@PostMapping("/form/{page}")
 	//@Secured("ROLE_ADMIN")
 	public String form(@Valid Evento evento,BindingResult result, Model model,
@@ -153,9 +153,9 @@ public class EventoController {
 			page = lastPage();
 		
 		return "redirect:/evento/list/" + page;
-	}
+	}*/
 	
-	
+	/*
 	private void AddUpdateImageFoto1(MultipartFile image, Evento evento) {
 					
 			if(evento.getId()!=null &&
@@ -176,7 +176,7 @@ public class EventoController {
 			evento.setFoto1(uniqueName);
 		
 	}
-private void AddUpdateImageFoto2(MultipartFile image, Evento evento) {
+	private void AddUpdateImageFoto2(MultipartFile image, Evento evento) {
 					
 			if(evento.getId()!=null &&
 				evento.getId()>0 && 
@@ -195,7 +195,7 @@ private void AddUpdateImageFoto2(MultipartFile image, Evento evento) {
 			
 			evento.setFoto2(uniqueName);
 		
-	}
+	}*/
 
 	
 
@@ -217,10 +217,10 @@ private void AddUpdateImageFoto2(MultipartFile image, Evento evento) {
 				return "redirect:/evento/list/" + page;
 			}
 			
-			if(evento.getFoto1()!=null)
+			/*if(evento.getFoto1()!=null)
 				uploadService.delete(evento.getFoto1());
 			if(evento.getFoto2()!=null)
-				uploadService.delete(evento.getFoto2());
+				uploadService.delete(evento.getFoto2());*/
 
 						
 			flash.addFlashAttribute("success","Deletion successful");

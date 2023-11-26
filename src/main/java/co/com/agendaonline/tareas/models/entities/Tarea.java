@@ -64,12 +64,12 @@ public class Tarea implements Serializable {
 	private String subtarea;
 	
 	
-	@Column(name="foto1")
-	private String foto1;
+	//@Column(name="foto1")
+	//private String foto1;
 	
 	
-	@Column(name="foto2")
-	private String foto2;
+	//@Column(name="foto2")
+	//private String foto2;
 	
 	
 	@Column(name="nivel_prioridad")
@@ -140,7 +140,7 @@ public class Tarea implements Serializable {
 	public void setCoste(String subtarea) {
 		this.subtarea = subtarea;
 	}
-	public String getFoto1() {
+	/*public String getFoto1() {
 			return foto1;
 	}
 	public void setFoto1(String foto1) {
@@ -151,7 +151,7 @@ public class Tarea implements Serializable {
 	}
 	public void setFoto2(String foto2) {
 		this.foto2 = foto2;
-	}
+	}*/
 	public String getNivelPrioridad() {
 			return nivelPrioridad;
 	}

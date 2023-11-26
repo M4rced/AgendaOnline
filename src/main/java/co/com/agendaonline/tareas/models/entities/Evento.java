@@ -54,9 +54,9 @@ public class Evento implements Serializable {
 	@Column(name="Lugar")
 	private String asignada;
 
-	private String foto1;
+	//private String foto1;
 
-	private String foto2;
+	//private String foto2;
 	
 	public Evento() {
 		super();
@@ -158,7 +158,7 @@ public class Evento implements Serializable {
 
 
 
-	public String getFoto1() {
+	/*public String getFoto1() {
 		return foto1;
 	}
 
@@ -178,7 +178,7 @@ public class Evento implements Serializable {
 
 	public void setFoto2(String foto2) {
 		this.foto2 = foto2;
-	}
+	}*/
 
 
 

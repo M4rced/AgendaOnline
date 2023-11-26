@@ -116,12 +116,12 @@ public class TareaController {
            BindingResult result, 
 				   
 		   Model model,
-		   @RequestAttribute("file") MultipartFile foto1_formname,
-			@RequestParam("foto1ImageText") String foto1ImageText,
-			@RequestParam("foto1ImageTextOld") String foto1ImageTextOld,
-			@RequestAttribute("file") MultipartFile foto2_formname,
-			@RequestParam("foto2ImageText") String foto2ImageText,
-			@RequestParam("foto2ImageTextOld") String foto2ImageTextOld,
+		   //@RequestAttribute("file") MultipartFile foto1_formname,
+			//@RequestParam("foto1ImageText") String foto1ImageText,
+		   //@RequestParam("foto1ImageTextOld") String foto1ImageTextOld,
+		   //@RequestAttribute("file") MultipartFile foto2_formname,
+		   //@RequestParam("foto2ImageText") String foto2ImageText,
+		   //@RequestParam("foto2ImageTextOld") String foto2ImageTextOld,
 
 		   @PathVariable(name = "page") int page,
 		   RedirectAttributes flash,
@@ -144,29 +144,23 @@ public class TareaController {
 			return "tarea/form";
 		}
 		
-		if(!foto1_formname.isEmpty())
-	AddUpdateImageFoto1(foto1_formname,tarea);
-else {
-	if(foto1ImageText.isEmpty() && !(foto1ImageTextOld.isEmpty())) {
-		uploadService.delete(foto1ImageTextOld);
-		tarea.setFoto1(null);
-	}
-}
+		//if(!foto1_formname.isEmpty())
+		//AddUpdateImageFoto1(foto1_formname,tarea);
+		//else {
+		/*if(foto1ImageText.isEmpty() && !(foto1ImageTextOld.isEmpty())) {
+		//uploadService.delete(foto1ImageTextOld);
+				//tarea.setFoto1(null);
+		//}
+	}*/
 
 
-if(!foto2_formname.isEmpty())
-	AddUpdateImageFoto2(foto2_formname,tarea);
-else {
-	if(foto2ImageText.isEmpty() && !(foto2ImageTextOld.isEmpty())) {
+	//if(!foto2_formname.isEmpty())
+	//AddUpdateImageFoto2(foto2_formname,tarea);
+	//else {
+	/*if(foto2ImageText.isEmpty() && !(foto2ImageTextOld.isEmpty())) {
 		uploadService.delete(foto2ImageTextOld);
 		tarea.setFoto2(null);
-	}
-}
-
-
-
-		
-		
+	}*/
 		
 		tareaService.save(tarea);
 		status.setComplete();
@@ -177,48 +171,65 @@ else {
 		
 		return "redirect:/tarea/list/" + page;
 	}
+
+
+
+
+		
+		
+	/*	
+		tareaService.save(tarea);
+		status.setComplete();
+		flash.addFlashAttribute("success",msg);
+		
+		if (creating)
+			page = lastPage();
+		
+		return "redirect:/tarea/list/" + page;
+	}*/
 	
-	
+	/*
 	private void AddUpdateImageFoto1(MultipartFile image, Tarea tarea) {
 					
 			if(tarea.getId()!=null &&
 			   tarea.getId()>0 && 
-			   tarea.getFoto1()!=null &&
-			   tarea.getFoto1().length() > 0) {
+			   //tarea.getFoto1()!=null &&
+			   //tarea.getFoto1().length() > 0) {
 			
-				uploadService.delete(tarea.getFoto1());
+			   //uploadService.delete(tarea.getFoto1());
 			}
 			
+	/*
 			String uniqueName = null;
 			try {
 				uniqueName = uploadService.copy(image);
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			}*/
 			
-			tarea.setFoto1(uniqueName);
+			//tarea.setFoto1(uniqueName);
 		
-	}
-private void AddUpdateImageFoto2(MultipartFile image, Tarea tarea) {
+	//}
+	/*private void AddUpdateImageFoto2(MultipartFile image, Tarea tarea) {
 					
 			if(tarea.getId()!=null &&
 			   tarea.getId()>0 && 
-			   tarea.getFoto2()!=null &&
-			   tarea.getFoto2().length() > 0) {
+			   // tarea.getFoto2()!=null &&
+			   //tarea.getFoto2().length() > 0) {
 			
-				uploadService.delete(tarea.getFoto2());
+				//uploadService.delete(tarea.getFoto2());
 			}
-			
+			/*
 			String uniqueName = null;
 			try {
 				uniqueName = uploadService.copy(image);
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			}*/
 			
-			tarea.setFoto2(uniqueName);
+			//tarea.setFoto2(uniqueName);
 		
-	}
+	//}*/
 
 	
 
@@ -249,10 +260,10 @@ private void AddUpdateImageFoto2(MultipartFile image, Tarea tarea) {
 				return "redirect:/tarea/list/" + page;
 			}
 			
-			if(tarea.getFoto1()!=null)
+			/*if(tarea.getFoto1()!=null)
 	uploadService.delete(tarea.getFoto1());
-if(tarea.getFoto2()!=null)
-	uploadService.delete(tarea.getFoto2());
+	if(tarea.getFoto2()!=null)
+	uploadService.delete(tarea.getFoto2());*/
 
 						
 			flash.addFlashAttribute("success","Deletion successful");
