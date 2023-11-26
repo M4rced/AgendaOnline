@@ -91,32 +91,6 @@
 
 
 	<div class="col-md-2">
-		<span class="fw-bold mb-0">Foto 1: </span>
-	</div>
-	<div class="col-md-4 mt-1 mt-md-3">
-		<a th:if="${tarea.foto1 != null}" th:href="@{'/tarea/viewimg/'+${tarea.id}+'/foto1'}" title="View foto1">
-		<img th:if="${tarea.foto1 != null}" 
-			th:src="@{'/upload/' + ${tarea.foto1}}" width="100px" 
-			class="border border-white shadow">
-		</a>
-		<img th:if="${tarea.foto1 == null}" th:src="@{'/images/app_no_image_logo.png'}" width="100px"></img>
-	</div>
-
-
-	<div class="col-md-2">
-		<span class="fw-bold mb-0">Foto 2: </span>
-	</div>
-	<div class="col-md-4 mt-1 mt-md-3">
-		<a th:if="${tarea.foto2 != null}" th:href="@{'/tarea/viewimg/'+${tarea.id}+'/foto2'}" title="View foto2">
-		<img th:if="${tarea.foto2 != null}" 
-			th:src="@{'/upload/' + ${tarea.foto2}}" width="100px" 
-			class="border border-white shadow">
-		</a>
-		<img th:if="${tarea.foto2 == null}" th:src="@{'/images/app_no_image_logo.png'}" width="100px"></img>
-	</div>
-
-
-	<div class="col-md-2">
 		<span class="fw-bold mb-0">Subtarea: </span>
 	</div>
 	<div class="col-md-4 mt-1 mt-md-3">
